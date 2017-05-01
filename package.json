@@ -1,0 +1,12 @@
+{
+  "name": "flash-cards",
+  "version": "1.0.0",
+  "description": "Flash Card PDF generator",
+  "main": "build.js",
+  "dependencies": {
+    "pdfkit": "^0.8.0"
+  },
+  "devDependencies": {},
+  "author": "Wei Zhuo",
+  "license": "ISC"
+}
