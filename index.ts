@@ -12,7 +12,23 @@ const words = [
     'they', 'me', 'she', 'zip', 'quit', 'clock', 'happy',
     'put', 'be', 'give', 'clock', 'sock', 'sky', 'happy',
     'we', 'by', 'to', 'good', 'look', 'moon', 'zoo',
-    'out', 'of', 'saw', 'feet', 'bee', 'green', 'see'
+    'out', 'of', 'saw', 'feet', 'bee', 'green', 'see',
+
+    // https://www.det.nsw.edu.au/eppcontent/glossary/app/resource/factsheet/4109.pdf
+    'after', 'again', 'and', 'at', 'away', 'because',
+    'been', 'before', 'big', 'boy', 'by', 'came', 'come',
+    'could', 'dad', 'didn’t', 'do', 'down', 'for', 'friend',
+    'from', 'gave', 'get', 'girl', 'give', 'goes', 'good',
+    'had', 'have', 'he', 'her', 'him', 'his', 'how', 'I',
+    'if', 'in', 'into', 'is', 'it', 'like', 'little',
+    'looked', 'love', 'made', 'make', 'me', 'mum', 'my',
+    'not', 'of', 'off', 'on', 'one', 'our', 'out', 'over',
+    'people', 'play', 'run', 'said', 'saw', 'say', 'school',
+    'see', 'she', 'should', 'so', 'stayed', 'that', 'the',
+    'their', 'them', 'then', 'there', 'they', 'this',
+    'to', 'too', 'upon', 'two', 'up', 'us', 'use',
+    'very', 'was', 'we', 'went', 'were', 'what', 'when',
+    'where', 'which', 'who', 'why', 'will', 'with', 'you', 'your',
 ];
 
 const A4 = {width: 592, height: 842};
@@ -43,7 +59,7 @@ let placeWords = function (words) {
         }
     }
 };
-for(let group of _.chunk(words, rows * cols)) {
+for (let group of _.chunk(_.uniq(words), rows * cols)) {
     doc.addPage({size: [A4.width, A4.height]});
     placeWords(group);
 }
